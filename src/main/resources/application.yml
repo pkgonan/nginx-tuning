@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://address:3306/DB?useLocalTransactionState=true&useConfigs=maxPerformance&serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8
+      username: test
+      password: test
+      connection-timeout: 2000  # ms
+      max-lifetime: 0
+      idle-timeout: 0
+      maximum-pool-size: 200
+      minimum-idle: 200
+      pool-name: hikariPool
+      leak-detection-threshold: 2000
+      data-source-properties:
+        cachePrepStmts: true
+        useServerPrepStmts: true
+        prepStmtCacheSize: 500
+        prepStmtCacheSqlLimit: 2048
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+management:
+  endpoints:
+    web:
+      base-path: /
+  health:
+    db:
+      enabled: false
+
+server:
+  port: 5000
+  tomcat:
+    max-threads: 1000
+    accept-count: 1000
