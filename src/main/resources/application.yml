@@ -10,6 +10,7 @@ spring:
       idle-timeout: 0
       maximum-pool-size: 200
       minimum-idle: 200
+      auto-commit: false
       pool-name: hikariPool
       leak-detection-threshold: 2000
       data-source-properties:
@@ -25,6 +26,7 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate.connection.provider_disables_autocommit: true
 
 management:
   endpoints:
