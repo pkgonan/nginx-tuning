@@ -6,8 +6,7 @@
 
     <groupId>nginx-tuning</groupId>
     <artifactId>nginx-tuning</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <version>0.0.0</version>
     <packaging>jar</packaging>
 
     <name>nginx-tuning</name>
