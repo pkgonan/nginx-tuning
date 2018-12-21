@@ -19,4 +19,13 @@ public class CouponController {
     public Long getCursor(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate criteriaDate){
         return couponService.getCouponStatisticsCursor(criteriaDate);
     }
+
+    @GetMapping("/coupons/{id}")
+    public Long getCoupon(@PathVariable long id){
+        return id;
+    }
+
+    @GetMapping("/nothing")
+    public void doNothing(){
+    }
 }
